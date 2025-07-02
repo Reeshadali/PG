@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Media Storage</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="login-container">
+        <h1>Private Media Storage</h1>
+        <input type="password" id="password-input" placeholder="Enter password">
+        <button id="login-btn">Access Media</button>
+        <p id="error-msg" class="hidden">Incorrect password. Try again.</p>
+    </div>
+
+    <div id="media-container" class="hidden">
+        <header>
+            <h1>My Personal Media</h1>
+            <div class="actions">
+                <button id="upload-btn">Upload Files</button>
+                <input type="file" id="file-input" multiple accept="image/*,video/*" style="display: none;">
+                <button id="download-all">Download All</button>
+                <button id="logout-btn">Logout</button>
+            </div>
+        </header>
+
+        <div class="filter-controls">
+            <select id="media-type-filter">
+                <option value="all">All Media</option>
+                <option value="image">Photos Only</option>
+                <option value="video">Videos Only</option>
+            </select>
+        </div>
+
+        <div id="upload-progress" class="hidden">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <span class="progress-text">Uploading: 0%</span>
+        </div>
+
+        <div id="media-grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</body>
+</html>
